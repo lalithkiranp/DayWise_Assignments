@@ -1,0 +1,1112 @@
+Java Programs and Their Outputs
+1.1 ArrayListDemo
+Code:
+import java.util.ArrayList; 
+public class ArrayListDemo { 
+    public static void main(String[] args) { 
+        ArrayList<String> fruits = new ArrayList<>(); 
+        fruits.add("Apple"); 
+        fruits.add("Banana"); 
+        fruits.add("Mango"); 
+        System.out.println("Fruits List:"); 
+        for(String fruit : fruits) { 
+            System.out.println(fruit); 
+        } 
+    } 
+}
+
+Output:
+Fruits List:
+Apple
+Banana
+Mango
+
+1.2 MaxMinDemo
+Code:
+import java.util.List; 
+import java.util.Arrays; 
+import java.util.Collections;
+
+public class MaxMinDemo { 
+    public static void main(String[] args) { 
+        List<Integer> numbers = Arrays.asList(10, 45, 23, 89, 5, 67); 
+        int max = Collections.max(numbers); 
+        int min = Collections.min(numbers); 
+        System.out.println("List: " + numbers); 
+        System.out.println("Maximum: " + max); 
+        System.out.println("Minimum: " + min); 
+    } 
+}
+
+Output:
+List: [10, 45, 23, 89, 5, 67]
+Maximum: 89
+Minimum: 5
+
+1.3 SortStringsDemo
+Code:
+import java.util.List; 
+import java.util.Arrays; 
+import java.util.Collections;
+
+public class SortStringsDemo { 
+    public static void main(String[] args) { 
+        List<String> names = Arrays.asList("Sreevani", "Anil", "Bhavya", "Chaitanya"); 
+        Collections.sort(names); 
+        for(String name : names){ 
+            System.out.println(name); 
+        } 
+    } 
+}
+
+Output:
+Anil
+Bhavya
+Chaitanya
+Sreevani
+
+
+
+
+
+
+1.4 StudentNames
+Code:
+java
+ -
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class StudentNames {
+    public static void main(String[] args) {
+        List<String> students = new ArrayList<>();
+        students.add("Ravi");
+        students.add("Anu");
+        students.add("Bhavya");
+        students.add("Kiran");
+        Collections.sort(students);
+        for(String name : students){
+            System.out.println(name);
+        }
+    }
+}
+Output:
+nginx
+ -
+Anu
+Bhavya
+Kiran
+Ravi
+________________________________________
+1.5 SumOfElements (Input: 10 20 30 -1)
+Code:
+java
+ -
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SumOfElements {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Integer> numbers = new ArrayList<>();
+        System.out.println("Enter numbers (type -1 to stop):");
+        int num;
+        while((num = sc.nextInt()) != -1){
+            numbers.add(num);
+        }
+        int sum = 0;
+        for(int n : numbers){
+            sum += n;
+        }
+        System.out.println("Sum: " + sum);
+    }
+}
+Output:
+vbnet
+ -
+Enter numbers (type -1 to stop):
+Sum: 60
+________________________________________
+2.1 ArrayListOperations
+Code:
+java
+ -
+import java.util.ArrayList;
+
+public class ArrayListOperations {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Cherry");
+        list.remove("Banana");
+        String fruit = list.get(1);
+        for(String item : list){
+            System.out.println(item);
+        }
+        System.out.println("Accessed Element: " + fruit);
+    }
+}
+Output:
+yaml
+ -
+Apple
+Cherry
+Accessed Element: Cherry
+________________________________________
+2.2 EmployeeList
+Code:
+java
+ -
+import java.util.LinkedList;
+
+public class EmployeeList {
+    public static void main(String[] args) {
+        LinkedList<String> employees = new LinkedList<>();
+        employees.add("Rahul");
+        employees.add("Sreevani");
+        employees.add("Meena");
+        for(String name : employees){
+            System.out.println(name);
+        }
+    }
+}
+Output:
+nginx
+ -
+Rahul
+Sreevani
+Meena
+________________________________________
+2.3 InsertElement
+Code:
+java
+ -
+import java.util.List;
+import java.util.ArrayList;
+
+public class InsertElement {
+    public static void main(String[] args) {
+        List<String> colors = new ArrayList<>();
+        colors.add("Red");
+        colors.add("Blue");
+        colors.add("Green");
+        colors.add(1, "Yellow");
+        for(String color : colors){
+            System.out.println(color);
+        }
+    }
+}
+Output:
+mathematica
+ -
+Red
+Yellow
+Blue
+Green
+
+
+
+2.4 ToDoList
+Code:
+java
+ -
+import java.util.ArrayList;
+
+public class ToDoList {
+    public static void main(String[] args) {
+        ArrayList<String> tasks = new ArrayList<>();
+        tasks.add("Buy groceries");
+        tasks.add("Complete assignment");
+        tasks.add("Pay bills");
+        tasks.remove("Complete assignment");
+        for(String task : tasks){
+            System.out.println(task);
+        }
+    }
+}
+Output:
+
+Buy groceries
+Pay bills
+________________________________________
+2.5 ShoppingCart
+Code:
+java
+ -
+import java.util.List;
+import java.util.ArrayList;
+
+public class ShoppingCart {
+    public static void main(String[] args) {
+        List<String> cart = new ArrayList<>();
+        cart.add("Laptop");
+        cart.add("Phone");
+        cart.add("Headphones");
+        cart.remove("Phone");
+        for(String item : cart){
+            System.out.println(item);
+        }
+    }
+}
+Output:
+
+ -
+Laptop
+Headphones
+________________________________________
+3. Set Interface
+________________________________________
+3.1 UniqueRollNumbers
+Code:
+java
+ -
+import java.util.HashSet;
+
+public class UniqueRollNumbers {
+    public static void main(String[] args) {
+        HashSet<Integer> rollNumbers = new HashSet<>();
+        rollNumbers.add(101);
+        rollNumbers.add(102);
+        rollNumbers.add(103);
+        rollNumbers.add(101); // duplicate, won't be added
+        for(int roll : rollNumbers){
+            System.out.println(roll);
+        }
+    }
+}
+Output (order may vary):
+ -
+101
+102
+103
+________________________________________
+3.2 SortedNames
+Code:
+java
+ -
+import java.util.TreeSet;
+
+public class SortedNames {
+    public static void main(String[] args) {
+        TreeSet<String> names = new TreeSet<>();
+        names.add("Sreevani");
+        names.add("Anil");
+        names.add("Bhavya");
+        names.add("Chaitanya");
+        for(String name : names){
+            System.out.println(name);
+        }
+    }
+}
+Output:
+nginx
+ -
+Anil
+Bhavya
+Chaitanya
+Sreevani
+________________________________________
+3.3 LinkedHashSetExample
+Code:
+java
+ -
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetExample {
+    public static void main(String[] args) {
+        LinkedHashSet<String> cities = new LinkedHashSet<>();
+        cities.add("Delhi");
+        cities.add("Mumbai");
+        cities.add("Chennai");
+        cities.add("Mumbai"); // duplicate, will be ignored
+        for(String city : cities){
+            System.out.println(city);
+        }
+    }
+}
+Output:
+nginx
+ -
+Delhi
+Mumbai
+Chennai
+
+3.4 EmailRegistry
+Code:
+java
+ -
+import java.util.HashSet;
+
+public class EmailRegistry {
+    public static void main(String[] args) {
+        HashSet<String> emailIDs = new HashSet<>();
+        emailIDs.add("user1@example.com");
+        emailIDs.add("user2@example.com");
+        emailIDs.add("user3@example.com");
+        emailIDs.add("user1@example.com"); // duplicate, ignored
+        for (String email : emailIDs) {
+            System.out.println(email);
+        }
+    }
+}
+Output (order may vary):
+graphql
+ -
+user1@example.com
+user2@example.com
+user3@example.com
+________________________________________
+3.5 CityListCleaner
+Code:
+java
+ -
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class CityListCleaner {
+    public static void main(String[] args) {
+        List<String> cities = new ArrayList<>();
+        cities.add("Delhi");
+        cities.add("Mumbai");
+        cities.add("Delhi");
+        cities.add("Chennai");
+        cities.add("Mumbai");
+        Set<String> uniqueCities = new HashSet<>(cities);
+        for (String city : uniqueCities) {
+            System.out.println(city);
+        }
+    }
+}
+Output (order may vary):
+nginx
+ -
+Delhi
+Mumbai
+Chennai
+________________________________________
+4. Map Interface
+________________________________________
+4.1 StudentMarks
+Code:
+java
+ -
+import java.util.HashMap;
+
+public class StudentMarks {
+    public static void main(String[] args) {
+        HashMap<String, Integer> marks = new HashMap<>();
+        marks.put("Ravi", 85);
+        marks.put("Sita", 92);
+        marks.put("Arun", 78);
+        marks.put("Lakshmi", 88);
+        for (String name : marks.keySet()) {
+            System.out.println(name + " - " + marks.get(name));
+        }
+    }
+}
+Output (order may vary):
+nginx
+ -
+Ravi - 85
+Sita - 92
+Arun - 78
+Lakshmi - 88
+________________________________________
+4.2 MapEntrySetDemo
+Code:
+java
+ -
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapEntrySetDemo {
+    public static void main(String[] args) {
+        HashMap<String, String> capitals = new HashMap<>();
+        capitals.put("India", "Delhi");
+        capitals.put("USA", "Washington");
+        capitals.put("Japan", "Tokyo");
+        capitals.put("France", "Paris");
+        for (Map.Entry<String, String> entry : capitals.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+    }
+}
+Output (order may vary):
+rust
+ -
+India -> Delhi
+USA -> Washington
+Japan -> Tokyo
+France -> Paris
+________________________________________
+4.3 UpdateMapValue
+Code:
+java
+ -
+import java.util.HashMap;
+
+public class UpdateMapValue {
+    public static void main(String[] args) {
+        HashMap<String, Integer> scores = new HashMap<>();
+        scores.put("Ravi", 80);
+        scores.put("Sita", 90);
+        scores.put("Arun", 75);
+        scores.put("Ravi", 95); // update Ravi's score
+        for (String name : scores.keySet()) {
+            System.out.println(name + " - " + scores.get(name));
+        }
+    }
+}
+Output (Ravi’s score updated, order may vary):
+nginx
+ -
+Ravi - 95
+Sita - 90
+Arun - 75
+________________________________________
+4.4 PhoneDirectory
+Code:
+java
+ -
+import java.util.HashMap;
+
+public class PhoneDirectory {
+    public static void main(String[] args) {
+        HashMap<String, String> phoneBook = new HashMap<>();
+        phoneBook.put("alice", "9876543210");
+        phoneBook.put("bob", "9123456780");
+        phoneBook.put("honor", "9988776655");
+        phoneBook.put("jane", "9011223344");
+        phoneBook.put("john", "9090909090");
+        for (String name : phoneBook.keySet()) {
+            System.out.println(name + " : " + phoneBook.get(name));
+        }
+    }
+}
+Output (order may vary):
+yaml
+ -
+alice : 9876543210
+bob : 9123456780
+honor : 9988776655
+jane : 9011223344
+john : 9090909090
+________________________________________
+4.5 WordFrequency
+Code:
+java
+ -
+import java.util.HashMap;
+
+public class WordFrequency {
+    public static void main(String[] args) {
+        String sentence = "java is easy and java is powerful";
+        String[] words = sentence.split(" ");
+        HashMap<String, Integer> frequency = new HashMap<>();
+        for (String word : words) {
+            if (frequency.containsKey(word)) {
+                frequency.put(word, frequency.get(word) + 1);
+            } else {
+                frequency.put(word, 1);
+            }
+        }
+        for (String word : frequency.keySet()) {
+            System.out.println(word + " : " + frequency.get(word));
+        }
+    }
+}
+Output (order may vary):
+yaml
+ -
+java : 2
+is : 2
+easy : 1
+and : 1
+powerful : 1
+
+
+
+5. Queue Interface
+________________________________________
+5.1 TaskQueue
+Code:
+java
+ -
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class TaskQueue {
+    public static void main(String[] args) {
+        Queue<String> tasks = new LinkedList<>();
+
+        tasks.add("Check emails");
+        tasks.add("Write report");
+        tasks.add("Attend meeting");
+        tasks.add("Review code");
+
+        while (!tasks.isEmpty()) {
+            String task = tasks.poll();
+            System.out.println("Processing: " + task);
+        }
+    }
+}
+Output:
+makefile
+ -
+Processing: Check emails
+Processing: Write report
+Processing: Attend meeting
+Processing: Review code
+________________________________________
+5.2 OfferPollDemo
+Code:
+java
+ -
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class OfferPollDemo {
+    public static void main(String[] args) {
+        Queue<String> queue = new LinkedList<>();
+        queue.offer("Task1");
+        queue.offer("Task2");
+        queue.offer("Task3");
+        System.out.println("Removed: " + queue.poll());
+        System.out.println("Removed: " + queue.poll());
+        for (String task : queue) {
+            System.out.println("Remaining: " + task);
+        }
+    }
+}
+Output:
+makefile
+ -
+Removed: Task1
+Removed: Task2
+Remaining: Task3
+________________________________________
+5.3 TaskPriorityQueue
+Code:
+java
+ -
+import java.util.PriorityQueue;
+
+public class TaskPriorityQueue {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> taskQueue = new PriorityQueue<>();
+        taskQueue.add(3);
+        taskQueue.add(1);
+        taskQueue.add(2);
+        taskQueue.add(4);
+        while (!taskQueue.isEmpty()) {
+            int task = taskQueue.poll();
+            System.out.println("Processing task with priority: " + task);
+        }
+    }
+}
+Output:
+csharp
+ -
+Processing task with priority: 1
+Processing task with priority: 2
+Processing task with priority: 3
+Processing task with priority: 4
+________________________________________
+5.4 PrintQueue
+Code:
+java
+ -
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class PrintQueue {
+    public static void main(String[] args) {
+        Queue<String> printJobs = new LinkedList<>();
+        printJobs.add("Document1.pdf");
+        printJobs.add("Photo.png");
+        printJobs.add("Report.docx");
+        printJobs.add("Invoice.xlsx");
+
+        while (!printJobs.isEmpty()) {
+            String job = printJobs.poll();
+            System.out.println("Printing: " + job);
+        }
+    }
+}
+Output:
+makefile
+ -
+Printing: Document1.pdf
+Printing: Photo.png
+Printing: Report.docx
+Printing: Invoice.xlsx
+________________________________________
+5.5 TicketBooking
+Code:
+-
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class TicketBooking {
+    public static void main(String[] args) {
+        Queue<String> customers = new LinkedList<>();
+        customers.add("Sree");
+        customers.add("Vani");
+        customers.add("Dasari");
+        customers.add("Vishnu");
+        customers.add("Chandra");
+        while (!customers.isEmpty()) {
+            String customer = customers.poll();
+            System.out.println("Ticket booked for: " + customer);
+        }
+    }
+}
+Output:
+yaml
+ -
+Ticket booked for: Sree
+Ticket booked for: Vani
+Ticket booked for: Dasari
+Ticket booked for: Vishnu
+Ticket booked for: Chandra
+________________________________________
+6. Iterator Interface
+________________________________________
+6.1 IteratorDemo
+Code:
+java
+ -
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class IteratorDemo {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+        names.add("alice");
+        names.add("bob");
+        names.add("john");
+        names.add("Viser");
+        names.add("Caren");
+        Iterator<String> itr = names.iterator();
+        while (itr.hasNext()) {
+            String name = itr.next();
+            System.out.println(name);
+        }
+    }
+}
+Output:
+nginx
+ -
+alice
+bob
+john
+Viser
+Caren
+________________________________________
+6.2 RemoveUsingIterator
+Code:
+java
+ -
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class RemoveUsingIterator {
+    public static void main(String[] args) {
+        List<String> items = new ArrayList<>();
+        items.add("Pen");
+        items.add("Pencil");
+        items.add("Eraser");
+        items.add("Pencil"); // duplicate to remove
+        items.add("Scale");
+        Iterator<String> itr = items.iterator();
+        while (itr.hasNext()) {
+            String item = itr.next();
+            if (item.equals("Pencil")) {
+                itr.remove();
+            }
+        }
+        for (String item : items) {
+            System.out.println(item);
+        }
+    }
+}
+Output:
+mathematica
+ -
+Pen
+Eraser
+Scale
+
+
+6.3 ListIteratorDemo
+Code:
+java
+ -
+import java.util.List;
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class ListIteratorDemo {
+    public static void main(String[] args) {
+        List<String> items = new ArrayList<>();
+        items.add("One");
+        items.add("Two");
+        items.add("Three");
+        items.add("Four");
+        ListIterator<String> itr = items.listIterator();
+        System.out.println("Forward Direction:");
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
+        System.out.println("Backward Direction:");
+        while (itr.hasPrevious()) {
+            System.out.println(itr.previous());
+        }
+    }
+}
+Output:
+mathematica
+ -
+Forward Direction:
+One
+Two
+Three
+Four
+Backward Direction:
+Four
+Three
+Two
+One
+________________________________________
+6.4 RemoveBooksByLetter
+Code:
+java
+ -
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class RemoveBooksByLetter {
+    public static void main(String[] args) {
+        List<String> books = new ArrayList<>();
+        books.add("The Alchemist");
+        books.add("Harry Potter");
+        books.add("Think and Grow Rich");
+        books.add("Atomic Habits");
+        books.add("To Kill a Mockingbird");
+        char removeStartLetter = 'T';
+        Iterator<String> itr = books.iterator();
+        while (itr.hasNext()) {
+            String title = itr.next();
+            if (title.startsWith(String.valueOf(removeStartLetter))) {
+                itr.remove();
+            }
+        }
+        for (String title : books) {
+            System.out.println(title);
+        }
+    }
+}
+Output:
+sql
+ -
+Harry Potter
+Atomic Habits
+________________________________________
+6.5 ReverseList
+Code:
+java
+ -
+import java.util.List;
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class ReverseList {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+        names.add("alice");
+        names.add("viseer");
+        names.add("Dian");
+        names.add("caren");
+        names.add("bob");
+        ListIterator<String> itr = names.listIterator(names.size());
+        while (itr.hasPrevious()) {
+            System.out.println(itr.previous());
+        }
+    }
+}
+Output:
+nginx
+ -
+bob
+caren
+Dian
+viseer
+alice
+________________________________________
+Sorting and Searching Collections
+________________________________________
+7.1 SortArrayList
+Code:
+java
+ -
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class SortArrayList {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(30);
+        numbers.add(10);
+        numbers.add(50);
+        numbers.add(20);
+        numbers.add(40);
+
+        Collections.sort(numbers);
+        System.out.println("Ascending:");
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+
+        Collections.sort(numbers, Collections.reverseOrder());
+        System.out.println("Descending:");
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+    }
+}
+Output:
+makefile
+ -
+Ascending:
+10
+20
+30
+40
+50
+Descending:
+50
+40
+30
+20
+10
+________________________________________
+7.2 BinarySearchDemo
+Code:
+java
+ -
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class BinarySearchDemo {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(20);
+        numbers.add(10);
+        numbers.add(50);
+        numbers.add(30);
+        numbers.add(40);
+        Collections.sort(numbers);
+        int index = Collections.binarySearch(numbers, 30);
+        if (index >= 0) {
+            System.out.println("Element found at index: " + index);
+        } else {
+            System.out.println("Element not found.");
+        }
+    }
+}
+Output:
+pgsql
+ -
+Element found at index: 2
+________________________________________
+7.3 SortEmployeesByName
+Code:
+java
+ -
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+class Employee {
+    String name;
+    int id;
+    Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+}
+
+public class SortEmployeesByName {
+    public static void main(String[] args) {
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee("alice", 102));
+        employees.add(new Employee("bob", 101));
+        employees.add(new Employee("jane", 104));
+        employees.add(new Employee("dian", 103));
+        Collections.sort(employees, new Comparator<Employee>() {
+            public int compare(Employee e1, Employee e2) {
+                return e1.name.compareTo(e2.name);
+            }
+        });
+        for (Employee emp : employees) {
+            System.out.println(emp.name + " - " + emp.id);
+        }
+    }
+}
+Output:
+nginx
+ -
+alice - 102
+bob - 101
+dian - 103
+jane - 104
+________________________________________
+7.4 ProductSortSearch
+Code:
+java
+ -
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+class Product {
+    String name;
+    double price;
+    Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+}
+
+public class ProductSortSearch {
+    public static void main(String[] args) {
+        List<Product> products = new ArrayList<>();
+        products.add(new Product("Phone", 25000));
+        products.add(new Product("Laptop", 60000));
+        products.add(new Product("Mouse", 1500));
+        products.add(new Product("Tablet", 18000));
+        products.add(new Product("Keyboard", 2000));
+        Collections.sort(products, new Comparator<Product>() {
+            public int compare(Product p1, Product p2) {
+                return Double.compare(p1.price, p2.price);
+            }
+        });
+
+        for (Product p : products) {
+            System.out.println(p.name + " - " + p.price);
+        }
+
+        System.out.println("In range 2000 to 20000:");
+        for (Product p : products) {
+            if (p.price >= 2000 && p.price <= 20000) {
+                System.out.println(p.name + " - " + p.price);
+            }
+        }
+    }
+}
+Output:
+yaml
+ -
+Mouse - 1500.0
+Keyboard - 2000.0
+Tablet - 18000.0
+Phone - 25000.0
+Laptop - 60000.0
+In range 2000 to 20000:
+Keyboard - 2000.0
+Tablet - 18000.0
+
+7.5 LeaderboardSystem
+Code:
+java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+class Player implements Comparable<Player> {
+    String name;
+    int score;
+
+    Player(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+
+    public int compareTo(Player other) {
+        return other.score - this.score; // Higher score comes first
+    }
+}
+
+public class LeaderboardSystem {
+    private List<Player> leaderboard = new ArrayList<>();
+
+    public void addPlayer(String name, int score) {
+        leaderboard.add(new Player(name, score));
+        Collections.sort(leaderboard);
+    }
+
+    public int getPlayerRank(String name) {
+        for (int i = 0; i < leaderboard.size(); i++) {
+            if (leaderboard.get(i).name.equalsIgnoreCase(name)) {
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+
+    public void displayLeaderboard() {
+        System.out.println("\n--- Leaderboard ---");
+        for (int i = 0; i < leaderboard.size(); i++) {
+            Player p = leaderboard.get(i);
+            System.out.println((i + 1) + ". " + p.name + " - " + p.score);
+        }
+    }
+
+    public static void main(String[] args) {
+        LeaderboardSystem lb = new LeaderboardSystem();
+        Scanner scanner = new Scanner(System.in);
+
+        lb.addPlayer("Alice", 80);
+        lb.addPlayer("Bob", 95);
+        lb.addPlayer("Charlie", 70);
+        lb.addPlayer("Diana", 88);
+
+        lb.displayLeaderboard();
+
+        System.out.print("\nEnter player name to find rank: ");
+        String searchName = scanner.nextLine();
+        int rank = lb.getPlayerRank(searchName);
+        if (rank != -1) {
+            System.out.println(searchName + " is ranked #" + rank);
+        } else {
+            System.out.println("Player not found in leaderboard.");
+        }
+
+        scanner.close();
+    }
+}
+Output (sample):
+markdown
+ -
+--- Leaderboard ---
+1. Bob - 95
+2. Diana - 88
+3. Alice - 80
+4. Charlie - 70
+
+Enter player name to find rank: Alice
+Alice is ranked #3
+
