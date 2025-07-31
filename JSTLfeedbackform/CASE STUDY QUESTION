@@ -1,0 +1,26 @@
+
+� Case Study: Online Feedback Collection System
+ 🎯 Scenario:
+ A college wants to collect feedback from students on various facilities (library, cafeteria, labs, etc.). 
+The system is purely JSP-based, using JSTL and Directives, and stores all data in memory only 
+(no database) for demo or local testing.
+ 💡 Objectives:
+ • Use JSP Directives to include common layouts.
+ • Use JSTL Core Tags to display questions, iterate over submitted feedback, and control 
+visibility.
+ • Use EL (Expression Language) to read submitted values and display them dynamically.
+ 📂 Pages Involved:
+ 1. index.jsp
+ ◦ A welcome page with a link to start the feedback form.
+ 2. feedbackForm.jsp
+ ◦ Displays a form with multiple facilities (library, lab, etc.) using checkboxes and text 
+inputs.
+ ◦ The form posts to feedbackSummary.jsp.
+ 3. feedbackSummary.jsp
+ ◦ Uses JSTL <c:forEach> to loop through responses.
+ ◦ Shows feedback based on form input.
+ ◦ If nothing is selected, uses <c:if> to display a "No feedback submitted" message.
+ 4. thankyou.jsp
+ ◦ Simple thank-you message using EL to greet the user.
+ 5. header.jsp / footer.jsp
+ ◦ Included using <%@ include %> directive on every page for layout consistency.
