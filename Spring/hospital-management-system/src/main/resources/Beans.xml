@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define beans -->
+    <bean id="patient" class="com.example.hospital_management_system.Patient" />
+    <bean id="appointment" class="com.example.hospital_management_system.Appointment" />
+    <bean id="billing" class="com.example.hospital_management_system.Billing" />
+
+    <!-- Wire them into HospitalService -->
+    <bean id="hospitalService" class="com.example.hospital_management_system.HospitalService">
+        <property name="patient" ref="patient" />
+        <property name="appointment" ref="appointment" />
+        <property name="billing" ref="billing" />
+    </bean>
+</beans>
