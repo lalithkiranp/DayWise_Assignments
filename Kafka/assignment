@@ -1,0 +1,8 @@
+Running Kafka Locally without Docker
+
+-To start the zookeeper
+  bin/windows/zookeeper-server-start.bat config/zookeeper.properties
+
+
+-Start Kafka Broker (New Git Bash Window)
+  bin/windows/kafka-server-start.bat config/server.properties
