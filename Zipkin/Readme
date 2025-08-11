@@ -1,0 +1,1 @@
+Zipkin is used for distributed tracing , it helps you track the path of a request as it flows through different services in a distributed system or microservices architecture.
