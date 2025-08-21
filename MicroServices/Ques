@@ -1,0 +1,77 @@
+ Microservices Overview
+ We will have three microservices, each running independently, with its own database and API.
+ 1. Restaurant Service
+ Responsibilities:
+ • Manage restaurant details.
+ • Manage menu items for each restaurant.
+ Core Features:
+ • Add, view, update, delete restaurants.
+ • Add, view, update, delete menu items for a restaurant.
+ • List all menu items for a restaurant.
+ Entity Examples:
+• Restaurant
+ ◦ id (PK)
+ ◦ name
+ ◦ location
+ ◦ contactNumber
+ • MenuItem
+ ◦ id (PK)
+ ◦ restaurantId (FK to Restaurant)
+ ◦ name
+ ◦ description
+ ◦ price
+ API Examples:
+ • POST /restaurants
+ • GET /restaurants
+ • GET /restaurants/{id}
+ • POST /restaurants/{id}/menu-items
+ • GET /restaurants/{id}/menu-items
+ 2. Order Service
+ Responsibilities:
+ • Handle customer orders.
+ • Track order status (PLACED, PREPARING, DELIVERED, CANCELED).
+ Core Features:
+ • Place an order for one or more menu items (fetch menu from Restaurant Service).
+ • View all orders for a customer.
+ • Update order status.
+ Entity Examples:
+ • Order
+◦ id (PK)
+ ◦ customerName
+ ◦ customerAddress
+ ◦ totalAmount
+ ◦ status
+ • OrderItem
+ ◦ id (PK)
+ ◦ orderId (FK to Order)
+ ◦ menuItemId
+ ◦ quantity
+ ◦ price
+ API Examples:
+ • POST /orders (calls Restaurant Service to verify menu item availability & price)
+ • GET /orders/{id}
+ • GET /customers/{customerName}/orders
+ • PUT /orders/{id}/status
+ 3. Delivery Service
+ Responsibilities:
+ • Assign delivery agents to orders.
+ • Track delivery status.
+ Core Features:
+ • Assign delivery person when order status becomes "PREPARING".
+ • Update delivery status.
+ • Track delivery by order ID.
+ Entity Examples:
+ • Delivery
+ ◦ id (PK)
+◦ orderId
+ ◦ deliveryPersonName
+ ◦ deliveryStatus (ASSIGNED, OUT_FOR_DELIVERY, DELIVERED)
+ API Examples:
+ • POST /deliveries (triggered when Order Service updates order to PREPARING)
+ • GET /deliveries/{orderId}
+ • PUT /deliveries/{id}/status
+ 3. Database Design
+ Each microservice has its own independent database:
+ • Restaurant DB → Tables: restaurants, menu_items
+ • Order DB → Tables: orders, order_items
+ • Delivery DB → Tables: deliverie
